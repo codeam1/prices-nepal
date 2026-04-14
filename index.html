@@ -1,94 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brand Image Gallery</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        text-align: center;
-      }
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        padding: 20px;
-      }
-      .gallery img {
-        max-width: 150px;
-        height: auto;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        transition: transform 0.2s;
-      }
-      .gallery img:hover {
-        transform: scale(1.1);
-        border-color: #555;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Brand Image Gallery</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand Image Gallery</title>
 
-    <div class="gallery">
-      <img src="images/acer.png" alt="Acer" />
-      <img src="images/apple.png" alt="Apple" />
-      <img src="images/asus.png" alt="Asus" />
-      <img src="images/bajaj.png" alt="Bajaj" />
-      <img src="images/benco.png" alt="Benco" />
-      <img src="images/byd.png" alt="BYD" />
-      <img src="images/dell.png" alt="Dell" />
-      <img src="images/herobike.png" alt="Hero Bike" />
-      <img src="images/honda.png" alt="Honda" />
-      <img src="images/honor.png" alt="Honor" />
-      <img src="images/hp.png" alt="HP" />
-      <img src="images/hyundai.png" alt="Hyundai" />
-      <img src="images/infinix.png" alt="Infinix" />
-      <img src="images/lenovo.png" alt="Lenovo" />
-      <img src="images/mahindra.png" alt="Mahindra" />
-      <img src="images/motorola.png" alt="Motorola" />
-      <img src="images/msi.png" alt="MSI" />
-      <img src="images/nothing.png" alt="Nothing" />
-      <img src="images/one-plus.png" alt="One Plus" />
-      <img src="images/oppo.png" alt="Oppo" />
-      <img src="images/poco.png" alt="Poco" />
-      <img src="images/realme.png" alt="Realme" />
-      <img src="images/redmi.png" alt="Redmi" />
-      <img src="images/royal-enfield.png" alt="Royal Enfield" />
-      <img src="images/samsung.png" alt="Samsung" />
-      <img src="images/suzuki.png" alt="Suzuki" />
-      <img src="images/tata.png" alt="Tata" />
-      <img src="images/tecno.png" alt="Tecno" />
-      <img src="images/tvs.png" alt="TVS" />
-      <img src="images/toyota.png" alt="Toyota" />
-      <img src="images/vivo.png" alt="Vivo" />
-      <img src="images/yamaha.png" alt="Yamaha" />
-      <img src="images/cfmoto.png" alt="CFMOTO" />
-      <img src="images/cg.png" alt="CG" />
-      <img src="images/palsonic.png" alt="Palsonic" />
-      <img src="images/haier.png" alt="Haier" />
-      <img src="images/konka.png" alt="Konka" />
-      <img src="images/midea.png" alt="Midea" />
-      <img src="images/panasonic.png" alt="Panasonic" />
-      <img src="images/tcl.png" alt="TCL" />
-      <img src="images/whisky.png" alt="Whisky" />
-      <img src="images/vodka.png" alt="Vodka" />
-      <img src="images/gin.png" alt="Gin" />
-      <img src="images/rum.png" alt="Rum" />
-      <img src="images/brandy.png" alt="Brandy" />
-      <img src="images/liqueur.png" alt="Liqueur" />
-      <img src="images/tequila.png" alt="Tequila" />
-      <img src="images/wine.png" alt="Wine" />
-      <img src="images/beer.png" alt="Beer" />
-      <img src="images/japanese-liquor.png" alt="Japanese Liquor" />
-      <img src="images/beverages.png" alt="Beverages" />
-      <img src="images/xiaomi.png" alt="Xiaomi" />
-      <img src="images/hyundai-ac.png" alt="hyundai-ac" />
-      <img src="images/hisense.png" alt="hisense" />
-      <img src="images/lg.png" alt="lg" />
-    </div>
-  </body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      max-width: 150px;
+      height: auto;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      border-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Brand Image Gallery</h1>
+
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const images = [
+      "acer","apple","asus","bajaj","benco","byd","dell","herobike","honda",
+      "honor","hp","hyundai","infinix","lenovo","mahindra","motorola","msi",
+      "nothing","one-plus","oppo","poco","realme","redmi","royal-enfield",
+      "samsung","suzuki","tata","tecno","tvs","toyota","vivo","yamaha",
+      "cfmoto","cg","palsonic","haier","konka","midea","panasonic","tcl",
+      "whisky","vodka","gin","rum","brandy","liqueur","tequila","wine","beer",
+      "japanese-liquor","beverages","xiaomi","hyundai-ac","hisense","lg"
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    images.forEach(name => {
+      const img = document.createElement("img");
+      img.src = `images/${name}.png`;
+      img.alt = name.replace("-", " ").toUpperCase();
+      gallery.appendChild(img);
+    });
+  </script>
+</body>
 </html>
